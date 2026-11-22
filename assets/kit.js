@@ -15,7 +15,7 @@ const EN = {
 };
 K.cfg = { L:k=>EN[k]||k, phone:"", villa:()=>"", chatHref:()=>"#", roomField:true };
 K.init = o => Object.assign(K.cfg, o);
-const L = k => { const v = K.cfg.L(k); return (v && v !== k) ? v : (EN[k] || k); };
+const L = k => { const v = K.cfg.L(k); if (v && v !== k) return v; const e = EN[k] || k; const lg = K.cfg.lang ? K.cfg.lang() : "en"; return (window.TX && TX[lg] && TX[lg][e]) || e; };
 K.fmt = n => "IDR " + Math.round(n).toLocaleString("en-US");
 K.esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const wa = (phone, msg) => `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;

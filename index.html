@@ -66,9 +66,11 @@
 <footer class="ft">
   <div class="mark">By<b>ROOM</b></div>
   <p data-i="footerTag"></p>
-  <p>Est. 2025 · byroom.world · <span style="opacity:.7">Photos: Wikimedia Commons (CC BY-SA)</span></p>
+  <p><span data-i="visitUs"></span> <a class="site" href="https://byroom.world" target="_blank" rel="noopener">byroom.world</a></p>
+  <div class="ig"><a href="https://www.instagram.com/byroomindonesia/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg><span>@byroomindonesia</span><small>Bali</small></a><a href="https://www.instagram.com/byroommc/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg><span>@byroommc</span><small>Thailand</small></a></div>
 </footer>
 
+<script src="assets/lang.js"></script>
 <script src="assets/kit.js"></script>
 <script src="assets/guide.js"></script>
 <script>
@@ -104,7 +106,7 @@ const CONFIG = {
   staff:{
     concierge:   { name:"Aprilya", role:{en:"Concierge / Villa Team",ru:"Консьерж / команда виллы",id:"Concierge / Tim Vila",zh:"礼宾 / 别墅团队"}, phone:"6282339608384" },
     housekeeping:{ name:"Housekeeping", role:{en:"Cleaning & Amenities",ru:"Уборка",id:"Kebersihan",zh:"客房清洁"}, phone:"6282339608384" },
-    support:     { name:"Villa Team", role:{en:"Any question · daily until 23:00",ru:"По любому вопросу · до 23:00",id:"Apa saja · hingga 23:00",zh:"任何问题 · 每日至 23:00"}, phone:"6282339608384" }
+    support:     { name:"Villa Team", role:{en:"Any question · daily 09:00–23:00",ru:"По любому вопросу · 09:00–23:00",id:"Apa saja · 09:00–23:00",zh:"任何问题 · 每日 09:00–23:00"}, phone:"6282339608384" }
   },
   reviewUrl:"https://g.page/r/YOUR-GOOGLE-REVIEW-LINK",
 
@@ -550,49 +552,49 @@ Object.keys(HUB_I18N).forEach(l => Object.assign(I18N[l], HUB_I18N[l]));
    Guest-app layer for Jungle Vista (new UI texts + views).
    ============================================================ */
 const APP_I18N = {
- en:{ ctaExplore:"Explore services", stayK:"You're staying at", wifiS:"4 floors · tap to open", concierge:"Concierge", concHours:"Until 23:00", conciergeS:"Aprilya · WhatsApp",
+ en:{ ctaExplore:"Explore services", stayK:"You're staying at", wifiS:"4 floors · tap to open", concierge:"Concierge", concHours:"09:00–23:00", conciergeS:"Aprilya · WhatsApp",
   needsK:"Concierge", needsH:"Everything for <em>your stay</em>", needsLede:"Grouped by what you need. Add anything you like — then send one request to the concierge on WhatsApp.",
   services:"services", seeAll:"See all", exH:"Around <em>Ubud</em>", infoH:"Handy <em>details</em>", teamK:"Here for you", teamH:"Your <em>team</em>",
   gMove:"Arrival & getting around", gMoveS:"Airport transfer · scooters · car with driver",
   gSpa:"Spa & beauty", gSpaS:"14 massages and nail care — in your room",
   gFood:"Food & drinks", gFoodS:"Floating breakfast, in-villa menu, private chef",
-  gTours:"Tours & adventures", gToursS:"Rafting, Batur sunrise, Nusa Penida, waterfalls",
+  gTours:"Tours & adventures", gToursS:"ATV, buggy, rafting, Batur sunrise, Nusa Penida", adMain:"Ride & raft", adSub:"Get out of the pool for a day. We book everything and can add a transfer.", perPax:"per person", guestsU:"guest|guests", visitUs:"Visit us",
   gCele:"Celebrations", gCeleS:"Birthday, honeymoon & surprise setups",
   gHome:"Home & housekeeping", gHomeS:"Cleaning, laundry, groceries, house guide",
   nMenu:"In-villa menu", nDining:"Dinners & chef", nAct:"More activities", nDecor:"Setups & decor", nOther:"Flowers & gifts", nExtras:"Laundry & shopping", nExtend:"Longer stay",
   iWifi:"Wi-Fi & location", iWifiS:"Network per floor, map", iHouseS:"AirPlay, curtains, AC, safe, pool", iKnowS:"Check-out, water, house notes", iHelpS:"112, clinic, supermarket", iWildS:"Who's who in the jungle", iPhrS:"Say it like a local", iPayS:"DANA / QRIS, tips",
   total:"Total", book:"Book", address:"Location", exploreAll:"Explore Ubud" },
- ru:{ ctaExplore:"Смотреть услуги", stayK:"Вы живёте в", wifiS:"4 этажа · нажмите", concierge:"Консьерж", concHours:"До 23:00", conciergeS:"Aprilya · WhatsApp",
+ ru:{ ctaExplore:"Смотреть услуги", stayK:"Вы живёте в", wifiS:"4 этажа · нажмите", concierge:"Консьерж", concHours:"09:00–23:00", conciergeS:"Aprilya · WhatsApp",
   needsK:"Консьерж", needsH:"Всё для <em>вашего отдыха</em>", needsLede:"Собрали по потребностям. Добавляйте что нравится — и отправьте один запрос консьержу в WhatsApp.",
   services:"услуг", seeAll:"Все", exH:"Вокруг <em>Убуда</em>", infoH:"Важные <em>детали</em>", teamK:"Мы рядом", teamH:"Ваша <em>команда</em>",
   gMove:"Трансфер и передвижение", gMoveS:"Из аэропорта · скутеры · машина с водителем",
   gSpa:"Спа и красота", gSpaS:"14 видов массажа и уход за ногтями — в номере",
   gFood:"Еда и напитки", gFoodS:"Плавающий завтрак, меню в номер, личный шеф",
-  gTours:"Туры и приключения", gToursS:"Рафтинг, рассвет на Батуре, Нуса-Пенида, водопады",
+  gTours:"Туры и приключения", gToursS:"ATV, багги, рафтинг, рассвет на Батуре, Нуса-Пенида", adMain:"Драйв и сплав", adSub:"Выберитесь из бассейна на денёк. Забронируем всё и при желании трансфер.", perPax:"за человека", guestsU:"гость|гостей", visitUs:"Наш сайт",
   gCele:"Праздники", gCeleS:"День рождения, медовый месяц, сюрпризы",
   gHome:"Дом и уборка", gHomeS:"Уборка, прачечная, продукты, инструкции",
   nMenu:"Меню в номер", nDining:"Ужины и шеф", nAct:"Ещё активности", nDecor:"Оформление", nOther:"Цветы и подарки", nExtras:"Прачечная и покупки", nExtend:"Продление",
   iWifi:"Wi-Fi и адрес", iWifiS:"Сеть по этажам, карта", iHouseS:"AirPlay, шторы, кондиционер, сейф, бассейн", iKnowS:"Выезд, вода, правила дома", iHelpS:"112, клиника, супермаркет", iWildS:"Кто живёт в джунглях", iPhrS:"Говорите как местные", iPayS:"DANA / QRIS, чаевые",
   total:"Итого", book:"Заказать", address:"Адрес", exploreAll:"Открыть Убуд" },
- id:{ ctaExplore:"Lihat layanan", stayK:"Anda menginap di", wifiS:"4 lantai · ketuk", concierge:"Concierge", concHours:"Hingga 23:00", conciergeS:"Aprilya · WhatsApp",
+ id:{ ctaExplore:"Lihat layanan", stayK:"Anda menginap di", wifiS:"4 lantai · ketuk", concierge:"Concierge", concHours:"09:00–23:00", conciergeS:"Aprilya · WhatsApp",
   needsK:"Concierge", needsH:"Semua untuk <em>masa inap Anda</em>", needsLede:"Dikelompokkan sesuai kebutuhan. Tambahkan yang Anda suka — lalu kirim satu permintaan ke concierge via WhatsApp.",
   services:"layanan", seeAll:"Semua", exH:"Sekitar <em>Ubud</em>", infoH:"Info <em>penting</em>", teamK:"Siap membantu", teamH:"Tim <em>Anda</em>",
   gMove:"Kedatangan & transportasi", gMoveS:"Transfer bandara · skuter · mobil + sopir",
   gSpa:"Spa & kecantikan", gSpaS:"14 jenis pijat & perawatan kuku — di kamar",
   gFood:"Makan & minum", gFoodS:"Floating breakfast, menu kamar, private chef",
-  gTours:"Tur & petualangan", gToursS:"Rafting, sunrise Batur, Nusa Penida, air terjun",
+  gTours:"Tur & petualangan", gToursS:"ATV, buggy, rafting, sunrise Batur, Nusa Penida", adMain:"Berkendara & rafting", adSub:"Keluar dari kolam sehari. Kami pesankan semuanya, bisa sekalian transfer.", perPax:"per orang", guestsU:"tamu|tamu", visitUs:"Kunjungi kami",
   gCele:"Perayaan", gCeleS:"Ulang tahun, bulan madu & kejutan",
   gHome:"Rumah & kebersihan", gHomeS:"Kebersihan, laundry, belanja, panduan unit",
   nMenu:"Menu kamar", nDining:"Makan malam & chef", nAct:"Aktivitas lain", nDecor:"Dekorasi", nOther:"Bunga & hadiah", nExtras:"Laundry & belanja", nExtend:"Perpanjang",
   iWifi:"Wi-Fi & lokasi", iWifiS:"Jaringan per lantai, peta", iHouseS:"AirPlay, tirai, AC, brankas, kolam", iKnowS:"Check-out, air, aturan", iHelpS:"112, klinik, supermarket", iWildS:"Penghuni hutan", iPhrS:"Bicara seperti warga lokal", iPayS:"DANA / QRIS, tip",
   total:"Total", book:"Pesan", address:"Lokasi", exploreAll:"Jelajahi Ubud" },
- zh:{ ctaExplore:"浏览服务", stayK:"您入住的是", wifiS:"4 层 · 点按查看", concierge:"礼宾", concHours:"至 23:00", conciergeS:"Aprilya · WhatsApp",
+ zh:{ ctaExplore:"浏览服务", stayK:"您入住的是", wifiS:"4 层 · 点按查看", concierge:"礼宾", concHours:"09:00–23:00", conciergeS:"Aprilya · WhatsApp",
   needsK:"礼宾服务", needsH:"入住所需，<em>一应俱全</em>", needsLede:"按需求分类。添加喜欢的服务，再通过一条 WhatsApp 消息发给礼宾。",
   services:"项服务", seeAll:"全部", exH:"乌布<em>周边</em>", infoH:"实用<em>信息</em>", teamK:"随时为您服务", teamH:"您的<em>团队</em>",
   gMove:"抵达与出行", gMoveS:"机场接送 · 摩托车 · 包车",
   gSpa:"水疗与美容", gSpaS:"14 种按摩与美甲——房内服务",
   gFood:"餐饮", gFoodS:"漂浮早餐、客房菜单、私人厨师",
-  gTours:"游览与探险", gToursS:"漂流、巴图尔日出、努沙佩尼达、瀑布",
+  gTours:"游览与探险", gToursS:"全地形车、越野车、漂流、巴图尔日出、努沙佩尼达", adMain:"越野与漂流", adSub:"离开泳池玩一天。我们全程代订，也可加订接送。", perPax:"每人", guestsU:"人|人", visitUs:"访问我们",
   gCele:"庆祝布置", gCeleS:"生日、蜜月与惊喜布置",
   gHome:"居家与清洁", gHomeS:"清洁、洗衣、代购、使用指南",
   nMenu:"客房菜单", nDining:"晚餐与厨师", nAct:"更多活动", nDecor:"布置", nOther:"鲜花与礼物", nExtras:"洗衣与代购", nExtend:"续住",
@@ -605,20 +607,26 @@ Object.keys(APP_I18N).forEach(l => Object.assign(I18N[l], APP_I18N[l]));
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const {esc, ic, h} = Guide; const fmt = Kit.fmt;
 let lang = "en";
-try { const sl = localStorage.getItem("jvLang"); const nl = (navigator.language || "").slice(0, 2).toLowerCase(); lang = sl || (["ru","id","zh"].includes(nl) ? nl : "en"); } catch(e){}
+try { lang = localStorage.getItem("jvLang2") || "en"; } catch(e){}  // English by default
+const LANGS = [["en","English","EN"],["ru","Русский","RU"],["uk","Українська","UK"],["fr","Français","FR"],["id","Bahasa Indonesia","ID"],["zh","中文","中文"],["ko","한국어","한국어"]];
 const V = CONFIG.villa.name;
-const t = v => (v && typeof v === "object" && !Array.isArray(v)) ? (v[lang] || v.en || Object.values(v)[0]) : v;
-const L = k => { const v = I18N[lang] && I18N[lang][k]; return v != null ? v : (I18N.en[k] != null ? I18N.en[k] : k); };
+const t = v => (v && typeof v === "object" && !Array.isArray(v)) ? (v[lang] || Guide.txDeep(lang, v.en) || Object.values(v)[0]) : Guide.tx(lang, v);
+const L = k => { const v = I18N[lang] && I18N[lang][k]; return v != null ? v : (I18N.en[k] != null ? Guide.txDeep(lang, I18N.en[k]) : k); };
 const fill = (s, x = "") => String(s).replace(/\{v\}/g, V).replace(/\{x\}/g, x);
 const wa = (phone, msg) => Kit.wa(phone, msg);
 const waMsg = (phone, key, x = "") => wa(phone, fill(L(key), x));
 const PH = CONFIG.staff.concierge.phone;
 const hunit = (n, u) => { const p = String(u).split("|"); return `${n} ${n === 1 ? p[0] : p[1]}`; };
 const form = {}; document.addEventListener("input", e => { if (e.target.id) form[e.target.id] = e.target.value; }, true);
-const HS = { trDir:"arr", days:3, hours:3, tpLen:"full", bfAt:1, spa:{}, hkDay:1, hkTime:0 };
+const ADV = [
+  {id:"atv", name:"ATV Ride", img:"adv_atv", desc:{en:"Jungle trails, rice fields and plenty of mud."}, opts:[["1",950000,{en:"1 rider"}],["2",1300000,{en:"2 on one ATV"}]]},
+  {id:"utv", name:"UTV Buggy Adventure", img:"adv_utv", desc:{en:"Off-road buggy through the countryside."}, opts:[["1",1600000,{en:"1 rider"}],["2",2000000,{en:"2 in one buggy"}]]},
+  {id:"tubing", name:"River Tubing", img:"adv_tubing", desc:{en:"Float, relax and enjoy the river."}, per:800000}
+];
+const HS = { atv:"1", utv:"1", g_tubing:2, trDir:"arr", days:3, hours:3, tpLen:"full", bfAt:1, spa:{}, hkDay:1, hkTime:0 };
 HUB_DATA.spa.forEach(s => HS.spa[s.id] = 0);
 const svcCat = en => (CONFIG.services.find(g => g.cat.en === en) || {items:[]}).items;
-const svcRows = items => h.rows(items.map(it => ({ id:"svc-" + it.t, img:it.img, icon:"sparkle", name:it.t, meta:(/^On request$/i.test(it.p) ? L("svOnReq") : it.p) + (it.cond ? " " + it.cond : "") })));
+const svcRows = items => h.rows(items.map(it => ({ id:"svc-" + it.t, img:it.img, icon:"sparkle", name:t(it.t), meta:(/^On request$/i.test(it.p) ? L("svOnReq") : Guide.price(lang, it.p)) + (it.cond ? " " + Guide.price(lang, it.cond) : "") })));
 
 /* ---------- basket items (messages in English for the team) ---------- */
 Kit.item("transfer", () => {
@@ -628,6 +636,10 @@ Kit.item("transfer", () => {
   return { t:"Airport transfer", m:bits.join(" · "), amt:HUB_DATA.transfer * (HS.trDir === "both" ? 2 : 1) };
 });
 HUB_DATA.scooters.forEach(b => Kit.item("sc-" + b.id, () => ({ t:`${b.name} ${b.cc}cc`, m:`${HS.days} day${HS.days > 1 ? "s" : ""} · helmet included`, amt:b.price * HS.days })));
+ADV.forEach(a => Kit.item("adv-" + a.id, () => {
+  if (a.opts){ const o = a.opts.find(o => o[0] === HS[a.id]) || a.opts[0]; return {t:a.name, m:o[2].en, amt:o[1]}; }
+  const n = HS["g_" + a.id]; return {t:a.name, m:`${n} guest${n > 1 ? "s" : ""}`, amt:a.per * n};
+}));
 Kit.item("car-hourly", () => ({ t:"Car with driver", m:`${HS.hours} hours`, amt:HUB_DATA.carHour * HS.hours }));
 Kit.item("private-tour", () => ({ t:`Private tour · ${HS.tpLen === "full" ? "full day" : "half day"}`, m:(form.tpDest || "").trim() || "destination to discuss", amt:null }));
 HUB_DATA.spa.forEach(s => Kit.item("spa-" + s.id, () => { const o = s.o[HS.spa[s.id]] || s.o[0]; return { t:s.n.en, m:`${o[0]} min · in your room`, amt:o[1] }; }));
@@ -645,7 +657,7 @@ Guide.views.move = {
   body(){
     return h.sec("transfer", L("trK"), L("trP"), `
         <div class="card"><div class="price-b"><b>IDR 550,000</b><span>${esc(L("perCarOW"))}</span></div>
-          <div class="route"><div class="pt">${ic("plane")}Ngurah Rai<br>Airport</div><div class="ln">${esc(L("trDrive"))}</div><div class="pt">${ic("home")}Jungle Vista<br>Ubud</div></div></div>
+          <div class="route"><div class="pt">${ic("plane")}Ngurah Rai<br>DPS</div><div class="ln">${esc(L("trDrive"))}</div><div class="pt">${ic("home")}Jungle Vista<br>Ubud</div></div></div>
         ${h.perks(L("trPerks"))}
         <div class="card">${h.seg("trDir", L("trDir"), HS.trDir)}
           <div class="k-fields">
@@ -681,7 +693,7 @@ Guide.views.spa = {
   }
 };
 Guide.views.food = {
-  get title(){ return L("gFood"); }, kicker:"Jungle Vista kitchen", get sub(){ return L("gFoodS"); }, img:"assets/svc/bf_hero.webp",
+  get title(){ return L("gFood"); }, kicker:"Jungle Vista", get sub(){ return L("gFoodS"); }, img:"assets/svc/bf_hero.webp",
   get nav(){ return [["float", L("bfK")], ["menu", L("nMenu")], ["dining", L("nDining")], ["minibar", L("secMinibar")]]; },
   body(){
     const dining = svcCat("Food & Dining").filter(it => it.t !== "Floating Breakfast");
@@ -691,22 +703,27 @@ Guide.views.food = {
         <div class="card"><div class="k-fields" style="margin-top:0"><label class="full">${esc(L("bfTime"))} · ${esc(L("bfOrder"))}
           <div class="tchips" data-group="bfAt">${L("bfTimes").map((x, i) => `<button type="button" data-v="${i}" class="${i === HS.bfAt ? "on" : ""}">${x}</button>`).join("")}</div></label></div>
           <div style="margin-top:14px">${h.add("floating-breakfast", "big", L("bfAddL"))}</div></div>`)
-      + h.sec("menu", L("secMenu"), L("menuIntro"), CONFIG.menu.map(g => h.rows(g.items.map(it => ({ id:"menu-" + it.name, img:it.img, icon:"utensils", name:it.name, meta:t(it.desc), price:it.price })), t(g.group))).join(""))
+      + h.sec("menu", L("secMenu"), L("menuIntro"), CONFIG.menu.map(g => h.rows(g.items.map(it => ({ id:"menu-" + it.name, img:it.img, icon:"utensils", name:it.name, meta:t(it.desc), price:Guide.price(lang, it.price) })), t(g.group))).join(""))
       + h.sec("dining", L("nDining"), "", svcRows(dining))
       + h.sec("minibar", L("secMinibar"), L("mbCharged"), `<div class="card price-list">${CONFIG.minibar.map(m => { const p = t(m.p); return `<div class="pr"><span>${esc(t(m.n))}</span><b>${/^(complimentary|бесплатно|gratis|免费)$/i.test(p) ? esc(p) : "IDR " + esc(p)}</b></div>`; }).join("")}</div>`);
   }
 };
 Guide.views.tours = {
-  get title(){ return L("gTours"); }, kicker:"Ubud & beyond", get sub(){ return L("gToursS"); }, img:"assets/img/ubud-tour.jpg",
-  get nav(){ return [["arrange", L("nbTours")], ["more", L("nAct")]]; },
+  get title(){ return L("gTours"); }, kicker:"Jungle Vista · Ubud", get sub(){ return L("gToursS"); }, img:"assets/img/ubud-tour.jpg",
+  get nav(){ return [["arrange", L("nbTours")], ["ride", L("adMain")], ["more", L("nAct")]]; },
   body(){
     const tours = (CONFIG.nearby.find(c => c.key === "tours") || {places:[]}).places;
-    return h.sec("arrange", L("nbTours"), L("svIntro"), h.places(tours.map(p => ({ name:p.name, img:p.img, note:t(p.note), cost:t(p.cost), maps:p.maps, addId:"tour-" + p.name, addLabel:L("book") })), L))
+    return h.sec("arrange", L("nbTours"), L("svIntro"), h.places(tours.map(p => ({ name:p.name, img:p.img, note:t(p.note), cost:t(p.cost), maps:p.maps, addId:"tour-" + p.name, addLabel:L("book") })), k => L(k === "directions" ? "nbDirections" : k)))
+      + h.sec("ride", L("adMain"), L("adSub"), h.prods(ADV.map(a => ({
+          id:"adv-" + a.id, img:`assets/svc/${a.img}.webp`, cover:true, name:a.name, meta:t(a.desc),
+          extra: a.opts ? `<div class="durs" data-group="${a.id}">${a.opts.map(o => `<button type="button" data-v="${o[0]}" class="${HS[a.id] === o[0] ? "on" : ""}">${esc(t(o[2]))} · ${fmt(o[1])}</button>`).join("")}</div>${h.total("adv-" + a.id, L("total"))}`
+            : `<div style="margin-top:8px">${h.step("g_" + a.id, HS["g_" + a.id], 1, 12, L("guestsU"), fmt(a.per), L("perPax"))}</div>${h.total("adv-" + a.id, L("total"))}`
+        })), true))
       + h.sec("more", L("nAct"), "", svcRows(svcCat("Tours & Activities")));
   }
 };
 Guide.views.celebrate = {
-  get title(){ return L("gCele"); }, kicker:"Surprise someone", get sub(){ return L("gCeleS"); }, img:"assets/img/honeymoon-proposal-setup.jpg",
+  get title(){ return L("gCele"); }, kicker:"Jungle Vista", get sub(){ return L("gCeleS"); }, img:"assets/img/honeymoon-proposal-setup.jpg",
   get nav(){ return [["decor", L("nDecor")], ["other", L("nOther")]]; },
   body(){ return h.sec("decor", L("nDecor"), "", svcRows(svcCat("Decorations"))) + h.sec("other", L("nOther"), "", svcRows(svcCat("Other Services").filter(it => /Flower/i.test(it.t)).concat(svcCat("Food & Dining").filter(it => /Romantic/i.test(it.t))))); }
 };
@@ -731,7 +748,7 @@ Guide.views.home = {
 };
 Guide.views.stay = {
   title:"Jungle Vista", get kicker(){ return L("stayK"); }, get sub(){ return CONFIG.villa.address; }, img:"assets/video/jv_wide.jpg",
-  body(){ return h.sec("wifi", "Wi-Fi", L("wFloorNote"), h.wifi(CONFIG.wifi.floors.map(f => ({ l:f.floor, v:f.code, mask:true })), k => L(k === "copy" ? "wCopy" : k)))
+  body(){ return h.sec("wifi", "Wi-Fi", L("wFloorNote"), h.wifi(CONFIG.wifi.floors.map(f => ({ l:t(f.floor), v:f.code, mask:true })), k => L(k === "copy" ? "wCopy" : k)))
       + h.sec("addr", L("address"), CONFIG.villa.address, `<a class="lbtn dark w" style="min-height:52px" href="${CONFIG.villa.mapsUrl}" target="_blank" rel="noopener">${ic("pin")} ${esc(L("fuBtn"))}</a>`); }
 };
 Guide.views.explore = {
@@ -747,9 +764,9 @@ Guide.views.know = { get title(){ return L("secKnow"); }, kicker:"Jungle Vista",
   get nav(){ return [["know", L("secKnow")], ["useful", L("secUseful")]]; },
   body(){ return h.sec("know", L("secKnow"), "", h.acc(CONFIG.goodToKnow.map(r => ({ e:r.ic, t:t(r.t), body:t(r.body) }))))
       + h.sec("useful", L("secUseful"), "", `<div class="ilist">${CONFIG.useful.map(u => `<a class="irow" href="${u.href}" ${u.href.startsWith("http") ? 'target="_blank" rel="noopener"' : ""}><span class="ic">${ic(u.ic === "cart" ? "cart" : u.ic)}</span><span class="b"><span class="t">${esc(t(u.tt))}</span><br><span class="m">${esc(t(u.dd))}</span></span><span class="ch">${ic("chev")}</span></a>`).join("")}</div>`); } };
-Guide.views.wild = { get title(){ return L("secWild"); }, kicker:"Jungle life", get sub(){ return L("wlIntro"); }, img:"assets/img/monkey-forest.jpg",
+Guide.views.wild = { get title(){ return L("secWild"); }, kicker:"Jungle Vista", get sub(){ return L("wlIntro"); }, img:"assets/img/monkey-forest.jpg",
   body(){ return h.sec("wild", L("secWild"), "", CONFIG.wildlife.map(g => `<div class="wl ${g.tone}"><h4>${g.ic} ${esc(t(g.t))}</h4>${g.items.map(it => `<div class="it"><span>${it.emoji}</span><span>${esc(t(it.text))}</span></div>`).join("")}</div>`).join("")); } };
-Guide.views.phrases = { get title(){ return L("secPhrases"); }, kicker:"Bahasa Indonesia", get sub(){ return L("phrasesIntro"); }, img:"assets/img/ubud-tour.jpg",
+Guide.views.phrases = { get title(){ return L("secPhrases"); }, kicker:"Jungle Vista", get sub(){ return L("phrasesIntro"); }, img:"assets/img/ubud-tour.jpg",
   body(){ return h.sec("phr", L("secPhrases"), "", `<div class="card" style="padding:4px 16px">${CONFIG.phrases.map(p => `<div class="phr"><div class="i">${esc(p.id)}<span class="p">${esc(p.pron)}</span></div><div class="m">${esc(t(p.mean))}</div></div>`).join("")}</div>`); } };
 Guide.views.pay = { get title(){ return L("secPayment"); }, kicker:"DANA · QRIS", get sub(){ return L("payIntro"); }, img:"assets/svc/bf_drinks.webp",
   body(){ const pay = CONFIG.payment || {}; return h.sec("pay", L("secPayment"), "", `<div class="card center"><div class="qr"><img src="${pay.qrImage}" alt="Payment QR (DANA / QRIS)"></div><p style="font-weight:600;margin:14px 0 4px">${esc(L("payScan"))}</p>${h.note(L("payHint"))}${pay.url ? `<a class="lbtn dark" style="margin-top:12px" href="${pay.url}" target="_blank" rel="noopener">${esc(L("payOnline"))}</a>` : ""}</div>`); } };
@@ -759,7 +776,7 @@ function renderHome(){
   document.documentElement.lang = lang;
   $$("[data-i]").forEach(el => el.textContent = L(el.dataset.i));
   $$("[data-ih]").forEach(el => el.innerHTML = L(el.dataset.ih));
-  $("#langs").innerHTML = [["en","EN"],["ru","RU"],["id","ID"],["zh","中文"]].map(([c, l]) => `<button type="button" data-lang="${c}" class="${c === lang ? "on" : ""}">${l}</button>`).join("");
+  Guide.langMenu($("#langs"), LANGS, lang, code => { lang = code; try { localStorage.setItem("jvLang2", lang); } catch(_){} renderHome(); Guide.repaint(); dyn(); });
   $("#heroSub").textContent = t(CONFIG.villa.tagline);
   $("#stayCard").innerHTML = `
     <div class="stay-h"><div class="stay-ph" style="background-image:url('${(CONFIG.gallery || [])[0] || "assets/video/jv_wide.jpg"}'),url('assets/video/jv_wide.jpg')"></div>
@@ -772,7 +789,7 @@ function renderHome(){
     ["move", "gMove", "gMoveS", "assets/svc/jv_rush2.webp", 4, "big"],
     ["spa", "gSpa", "gSpaS", "assets/svc/spa_massage.webp", HUB_DATA.spa.length + HUB_DATA.nails.length],
     ["food", "gFood", "gFoodS", "assets/svc/bf_hero.webp", 1 + CONFIG.menu.reduce((s, g) => s + g.items.length, 0) + svcCat("Food & Dining").length - 1],
-    ["tours", "gTours", "gToursS", "assets/img/ubud-tour.jpg", ((CONFIG.nearby.find(c => c.key === "tours") || {places:[]}).places.length) + svcCat("Tours & Activities").length],
+    ["tours", "gTours", "gToursS", "assets/img/ubud-tour.jpg", ((CONFIG.nearby.find(c => c.key === "tours") || {places:[]}).places.length) + svcCat("Tours & Activities").length + ADV.length],
     ["celebrate", "gCele", "gCeleS", "assets/img/honeymoon-proposal-setup.jpg", svcCat("Decorations").length + 2],
     ["home", "gHome", "gHomeS", "assets/video/jv_wide.jpg", 4, "wide"]
   ];
@@ -801,12 +818,12 @@ document.addEventListener("click", e => {
   if (lb){ lang = lb.dataset.lang; try { localStorage.setItem("jvLang", lang); } catch(_){} renderHome(); Guide.repaint(); dyn(); }
 });
 document.addEventListener("kpick", e => { const {group, value} = e.detail;
-  if (group === "trDir" || group === "tpLen") HS[group] = value; else if (group === "bfAt" || group === "hkDay" || group === "hkTime") HS[group] = +value;
+  if (group === "trDir" || group === "tpLen" || group === "atv" || group === "utv") HS[group] = value; else if (group === "bfAt" || group === "hkDay" || group === "hkTime") HS[group] = +value;
   else if (group && group.startsWith("spa-")) HS.spa[group.slice(4)] = +value; dyn(); });
 document.addEventListener("kstep", e => { HS[e.detail.name] = e.detail.value; dyn(); });
 document.addEventListener("input", e => { if (/^(tr|tp)/.test(e.target.id)) dyn(); });
 
-Kit.init({ L:k => { const v = I18N[lang] && I18N[lang][k]; return v != null ? v : k; }, phone:PH, villa:() => V, chatHref:() => waMsg(PH, "waHelp"), roomField:true });
+Kit.init({ lang:() => lang, L:k => { const v = I18N[lang] && I18N[lang][k]; return v != null ? v : k; }, phone:PH, villa:() => V, chatHref:() => waMsg(PH, "waHelp"), roomField:true });
 Guide.setup({ L:k => L(k === "copied" ? "wCopied" : k), afterRender:dyn });
 Kit.mountDock();
 renderHome();

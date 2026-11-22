@@ -174,6 +174,31 @@ G.mount = function(){
   route();
 };
 
+/* ---------------- language menu ---------------- */
+// list: [[code, label, short]]; onPick(code)
+G.langMenu = function(el, list, cur, onPick){
+  const c = list.find(l => l[0] === cur) || list[0];
+  el.innerHTML = `<button type="button" class="lang-btn" aria-haspopup="listbox" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span>${esc(c[2] || c[0].toUpperCase())}</span><svg class="dn" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="lang-list" role="listbox">${list.map(([code, label]) => `<button type="button" role="option" data-lang="${code}" aria-selected="${code === cur}" class="${code === cur ? "on" : ""}">${esc(label)}</button>`).join("")}</div>`;
+  const btn = el.querySelector(".lang-btn");
+  btn.onclick = e => { e.stopPropagation(); const o = el.classList.toggle("open"); btn.setAttribute("aria-expanded", String(o)); };
+  el.querySelectorAll(".lang-list button").forEach(b => b.onclick = e => { e.stopPropagation(); el.classList.remove("open"); onPick(b.dataset.lang); });
+  if (!G._langDoc){ G._langDoc = true; document.addEventListener("click", () => document.querySelectorAll(".langs.open").forEach(x => x.classList.remove("open"))); }
+};
+
+/* ---------------- translation overlay ----------------
+   TX[lang][englishText] = translation. Used when a page has no native string for a language. */
+G.tx = (lang, en) => (window.TX && TX[lang] && typeof en === "string" && TX[lang][en]) || en;
+const FROM = {ru:"от $1", uk:"від $1", fr:"À partir de $1", id:"Mulai $1", zh:"$1 起", ko:"$1부터"};
+const UNIT = {ru:{couple:"на двоих",person:"чел.",day:"день",kg:"кг"}, uk:{couple:"на двох",person:"ос.",day:"день",kg:"кг"}, fr:{couple:"pour deux",person:"pers.",day:"jour",kg:"kg"}, id:{couple:"pasangan",person:"orang",day:"hari",kg:"kg"}, zh:{couple:"两人",person:"人",day:"天",kg:"公斤"}, ko:{couple:"2인",person:"1인",day:"1일",kg:"kg"}};
+G.price = (lang, s) => {
+  if (typeof s !== "string" || lang === "en") return s;
+  let out = s.replace(/\/\s*(couple|person|day|kg)\b/g, (m, u) => "/ " + ((UNIT[lang] || {})[u] || u));
+  if (FROM[lang]) out = out.replace(/^from\s+(.+)$/i, FROM[lang]);
+  return out;
+};
+G.txDeep = (lang, v) => typeof v === "string" ? G.tx(lang, v) : Array.isArray(v) ? v.map(x => G.txDeep(lang, x)) : v;
+
 /* ---------------- reveal on scroll ---------------- */
 G.reveal = function(root){
   if (matchMedia("(prefers-reduced-motion:reduce)").matches) return;
