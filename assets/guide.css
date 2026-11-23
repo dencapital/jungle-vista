@@ -40,7 +40,8 @@ img{max-width:100%}
 .logo svg{width:30px;height:30px}
 .logo span{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;font-weight:600;line-height:1.2}
 .logo small{display:block;font-size:.58rem;letter-spacing:.26em;opacity:.7;font-weight:500}
-.hero-r{display:flex;align-items:center;gap:8px}
+.hero-r{display:flex;align-items:center;gap:6px}
+@media (max-width:370px){.logo small{display:none}}
 .ig-btn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(10,20,16,.3);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .2s}
 .ig-btn:active,.ig-btn:hover{background:rgba(255,255,255,.22)}
 .ig-btn svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8}
